@@ -59,7 +59,7 @@ PUBLIC void log_lib_close(void)
 {
 	if (pFile != NULL) {
 		fclose(pFile);
-		pFile = NULL;	/* FIX (1.0, 2026): no use after close */
+		pFile = NULL;	/* FIX (1.1, 2026): no use after close */
 	}
 }
 

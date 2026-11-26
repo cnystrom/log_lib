@@ -16,9 +16,9 @@
 #ifndef _LOG_LIB_VERSION_H
 #define _LOG_LIB_VERSION_H
 
-#define LOG_LIB_VERSION		"1.0"
+#define LOG_LIB_VERSION		"1.1"
 #define LOG_LIB_VERSION_MAJOR	1
-#define LOG_LIB_VERSION_MINOR	0
+#define LOG_LIB_VERSION_MINOR	1
 #define LOG_LIB_VERSION_YEAR	"2026"
 #define LOG_LIB_ORIGIN \
 	"Split from NewIO 0.12, https://github.com/cnystrom/newio"

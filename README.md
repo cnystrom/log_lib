@@ -1,6 +1,11 @@
 # log_lib: tiny logging to a file or stdout
 
-Version 1.0 (2026). Split from NewIO 0.12, https://github.com/cnystrom/newio
+Version 1.1 (2026). Split from NewIO 0.12, https://github.com/cnystrom/newio
+
+## Versions
+
+- **1.0:** original code as published in NewIO 0.12 (tag `v1.0`).
+- **1.1:** this release, with the fixes listed below. See `CHANGES.md`.
 
 log_lib is NewIO's logger, renamed. It writes `printf`-style messages to a
 log file, or to stdout when asked, and flushes after every message.
@@ -27,7 +32,7 @@ From `log_lib.h`:
 If nothing is open and stdout is off, messages are dropped.
 `nio_types.h` (copied unchanged from NewIO) supplies `PUBLIC`, `PRIVATE`,
 `TRUE`, `FALSE` and the small integer types. `log_lib_version.h` defines
-`LOG_LIB_VERSION` ("1.0") and `LOG_LIB_ORIGIN`.
+`LOG_LIB_VERSION` ("1.1") and `LOG_LIB_ORIGIN`.
 
 ## Dependencies
 
@@ -70,13 +75,13 @@ Contact: Chris Nystrom <cnystrom@gmail.com>
   `fprintf(pFile, func_name)` became `printf("%s", func_name)` and
   `fprintf(pFile, "%s", func_name)`. clang warned (`-Wformat-security`): a
   `%` in a function name would have been read as a format.
-- `log_lib.c:62`: bug fix, see "Fixed in 1.0".
+- `log_lib.c:62`: bug fix, see "Fixed in 1.1".
 - Removed two old personal contact lines (a web-log URL and a chat handle) from the file headers, at Chris's request (2026). The rest of each header and the authorship are unchanged, so header-area line numbers are 2 lower than in NewIO.
 - `Makefile:28`: `-I..` became `-I.`.
 - Added `log_lib_version.h`, `test_log_lib.c`, a `make test` target at the
   end of the `Makefile`, this README, `LICENSE` and `COPYING`.
 
-## Fixed in 1.0
+## Fixed in 1.1
 
 - **`log_lib_close()` didn't reset its file pointer** (`log_lib.c:62`). A
   print or a second close after `log_lib_close()` used the closed `FILE`.

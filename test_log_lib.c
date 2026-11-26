@@ -45,7 +45,7 @@ int main(void)
 	CHECK(n == 3);
 	remove(LOG_FILE);
 
-	/* 1.0 fix: printing or closing again after log_lib_close() used the
+	/* 1.1 fix: printing or closing again after log_lib_close() used the
 	 * closed FILE. Now it is dropped, and a new open works. */
 	log_lib_print("dropped after close\n");
 	log_lib_close();
